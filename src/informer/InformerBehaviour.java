@@ -42,10 +42,10 @@ public class InformerBehaviour extends TickerBehaviour {
     public void onTick() {
         for (String container : containers) {
                 this.myAgent.doMove(new ContainerID(container, null));
-                results.put("jvmMemory", results.get("jvmMemory") + (int) Runtime.getRuntime().totalMemory()); 
+                results.put("jvmMemory", results.get("jvmMemory") + (int) (Runtime.getRuntime().totalMemory() / mb)); 
         }
         this.myAgent.doMove(new ContainerID("Main-Container", null));
-        System.out.println("Total JVM Memory: " + results.get("jvmMemory") + "\n");
+        System.out.println("Total JVM Memory: " + results.get("jvmMemory") + "mb \n");
         initialize();
     }
     
