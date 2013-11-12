@@ -1,0 +1,10 @@
+Para compilar:
+	javac -classpath lib/jade.jar -d bin src/informer/*.java 
+
+Dsp para iniciar varios container:
+	java -cp lib/jade.jar:bin jade.Boot -gui
+
+	en otra terminal:
+
+	java -cp lib/jade.jar:bin jade.Boot -container
+
