@@ -19,11 +19,11 @@ public class InformerBehaviour extends TickerBehaviour {
     
     private static int mb = 1024*1024;
     
-    private static final int PERIOD = 20000; //20 seconds 
+    private static final int PERIOD = 10000; //10 seconds 
     
     private String[] containers = { "Container-1", "Container-2" }; //the containers to move to
        
-    private HashMap<String,Long> results;
+    private HashMap<String,Integer> results;
     
     
     public InformerBehaviour(Agent a) {
@@ -32,20 +32,20 @@ public class InformerBehaviour extends TickerBehaviour {
     }
     
     private void initialize() {
-        Long zero = new Long(0);
-        results.put("jvmMemory", zero);
-        results.put("processingLoad", zero);
-        results.put("totalMemory", zero);
+        results = new HashMap<>();
+        results.put("jvmMemory", 0);
+        results.put("processingLoad", 0);
+        results.put("totalMemory", 0);
     }
     
     @Override
     public void onTick() {
         for (String container : containers) {
                 this.myAgent.doMove(new ContainerID(container, null));
-                results.put("jvmMemory", results.get("jvmMemory") + Runtime.getRuntime().totalMemory()); 
+                results.put("jvmMemory", results.get("jvmMemory") + (int) Runtime.getRuntime().totalMemory()); 
         }
         this.myAgent.doMove(new ContainerID("Main-Container", null));
-        System.out.println("Total JVM Memory: " + results.get("jvmMemory") + "/n");
+        System.out.println("Total JVM Memory: " + results.get("jvmMemory") + "\n");
         initialize();
     }
     

@@ -1,10 +1,13 @@
 Para compilar:
 	javac -classpath lib/jade.jar -d bin src/informer/*.java 
 
-Dsp para iniciar varios container:
+Despues para iniciar varios container:
 	java -cp lib/jade.jar:bin jade.Boot -gui
 
 	en otra terminal:
 
 	java -cp lib/jade.jar:bin jade.Boot -container
 
+	en otra más lo mismo (por hardcodeo necesita 2 container)
+
+y por ultimo, para iniciar el agent lo podes hacer desde la interfaz gráfica, agregando un nuevo agent al Main-Container.

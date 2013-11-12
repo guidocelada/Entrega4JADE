@@ -14,22 +14,20 @@ import jade.core.behaviours.Behaviour;
  */
 @SuppressWarnings("serial")
 public class InformerAgent extends Agent {  
-       
-    private Behaviour behaviour;
-    
-    public InformerAgent() {
-        super();
-        this.behaviour = new InformerBehaviour(this);
-    }
     
     @Override
     public void setup() {
-        System.out.println("Initiating " + this.getName());
-        addBehaviour(this.behaviour);
+        System.out.println("\nDEBUG: Initiating " + this.getLocalName());
+        addBehaviour(new InformerBehaviour(this));
+    }
+    
+    @Override
+    public void afterMove() {
+        System.out.println("DEBUG: " + this.getLocalName() + " passing through " + this.here().getName());
     }
     
     @Override
     public void takeDown() {
-        System.out.println("Taking down " + this.getLocalName() + " on location " + this.here().getName());
+        System.out.println("DEBUG: Taking down " + this.getLocalName() + " on location " + this.here().getName());
     }
 }
