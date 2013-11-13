@@ -13,6 +13,7 @@ import java.util.HashMap;
  *
  * @author Celada, Soria
  */
+//TODO: add totalMemory and processingLoad
 @SuppressWarnings("serial")
 public class InformerAgent extends Agent {  
     
