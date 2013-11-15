@@ -1,13 +1,35 @@
-Para compilar:
+Primero crea una carpeta “bin” en “Entrega4JADE-2”, después compilas metiendo en el classpath el .jar de JADE y que le decís que te ponga el .class en bin:
+
 	javac -classpath lib/jade.jar -d bin src/informer/*.java 
 
-Despues para iniciar varios container:
+
+
+Despues para ejecutar se puede de varias maneras, yo lo hago así, siempre parado en la carpeta “Entrega4JADE-2”:
+	
+	--Primero ejecuto la GUI de JADE con:
+
 	java -cp lib/jade.jar:bin jade.Boot -gui
 
-	en otra terminal:
+
+	-Despues en otra terminal, creas otro container que se llama por defecto Container-1 y te va a aparecer en la GUI que levantaste con el comando anterior:
 
 	java -cp lib/jade.jar:bin jade.Boot -container
 
-	en otra más lo mismo (por hardcodeo necesita 2 container)
+	
+	-En otra terminal más haces lo mismo, porque por hardcodeo el Agent visita 2 Containers: 
+	java -cp lib/jade.jar:bin jade.Boot -container
 
-y por ultimo, para iniciar el agent lo podes hacer desde la interfaz gráfica, agregando un nuevo agent al Main-Container.
+
+
+Por último, para iniciar el Agent (que es el código que hice yo) lo podes hacer desde la interfaz gráfica, agregando un nuevo agent al Main-Container con un botón. Ya con eso se ejecuta sólo y te muestra la salida en las consolas que tenés abiertas.
+
+Salu2
+
+
+
+
+
+
+	
+	
+
